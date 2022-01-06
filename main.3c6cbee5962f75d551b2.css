@@ -1,0 +1,103 @@
+html, body, #app {
+    height: 100%; 
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#app {
+    animation: backGradient 40s ease infinite;
+    background: linear-gradient(-45deg, #c3fdd0, #ffc7dd, #c1ecfd, #fcfdc3);
+    background-size: 400% 400%;    
+}
+
+::-webkit-scrollbar {
+    width: 24px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: #ffffffc7;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #843465;
+    border-radius: 10px;
+    /* box-shadow: inset 1px 1px 10px #f3faf7; */
+}
+
+.main__wrapper {
+    width: 50vw;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 10vh;
+    display: flex;
+    gap: 1vh;
+    flex-direction: column;
+}
+
+.main__input {
+    width: 100%;
+    height: 7vh;
+    line-height: 7vh;
+    font-size: 6vh;
+    border-radius: 10px;
+    padding-left: 10px;
+    animation: smoothAdd 1.5s linear forwards;
+}
+
+.main__answer-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    padding: 0 15px;
+    overflow: auto;
+    max-height: 70vh;
+}
+
+.main__answer {
+    width: 100%;
+    height: 4vh;
+    line-height: 3.5vh;
+    font-size: 3.5vh;    
+    border: 1px black solid;
+    border-radius: 5px;
+    padding-left: 5px;
+    opacity: 0;
+    background-color: rgb(255, 255, 255);
+    animation: smoothAdd 0.5s linear forwards;
+}
+
+
+@keyframes smoothAdd {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes backGradient {
+    0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+}
+
